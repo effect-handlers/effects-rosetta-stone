@@ -7,34 +7,75 @@ mainstream](https://www.dagstuhl.de/en/program/calendar/semhp/?semnr=18172)
 (April 22–27, 2018) have initiated this repository of examples that show how to
 program with algebraic effects and handlers in various languages.
 
-The repository contains a number of examples, starting from very simple ones
-that are meant to demonstrate the similarities and differences between
-implementations of algebraic effects, all the way to more sophisticated
-challenges and benchmarks.
+## How to contribute
 
-### How to contribute
+### General guidelines
 
-Will be written.
+1. Each example should be self-contained.
+2. Each example snould demonstate one aspect of effectful programming.
+3. All folder names are in lower case, with words separated by dashes, e.g.,
+   `cooperative-threads`, `multicore-ocaml`, `algol-68`.
 
-## Examples
+### Repository structure
 
-### Basic examples
+The repository contains one folder `example-x` for each example, which is
+oganized as follows:
 
-Educational examples that help explain algebraic effects and handlers.
+* `exampleX/README.md` contains a general description of the example
+* `exampleX/language-y` contains the example implemented in `language-y`, where
+   an optional `example-x/language-y/README.md` contains further remarks about
+   the language implementation of the example, if any.
+
+### How to contribute a new programming language
+
+To add a new programming language *My Language*, follow these steps:
+
+1. Pick a lower-case name for the folders which contain examples written in My
+   Language, e.g., `my-language`.
+2. Describe the language in the section *Languages* below. Use `my-language` as
+   the section name. Please provide links to the language home page and
+   installation instructions.
+3. Implement at least one example in your language.
+
+### How to contribute a new example
+
+To add a completely new example, follow these steps:
+
+1. Create a lower-case folder `example-x` that will contain the example.
+2. Create `example-x/README.md` and write a general description of the problem.
+   Please follow the format of existing example descriptions.
+3. Implement at least one example so that it is clear what needs to be
+   implemented.
+
+### How to contribute a new example instance
+
+To contribute an implementation of `example-x` in `language-y`, create the
+folder `example-x/language-y` and put the examples in it. If you have
+langauge-specific comments about the example, put them in
+`example-x/language-y/README.md`.
+
+You may show several variants of the example. We recommend that you put them in
+separate files and commment on them on the `README.md` file.
 
 
-### Advanced examples
+### May I improve other people's code?
 
-Examples which demonstrate the versatility and usefulness of algebraic effects
-and handlers.
+Yes, we strongly encourage sharing and cooperation.
 
-### Problematics examples
+## Langauges
 
-Examples which are typically difficult or annoying to implement. These can serve
-as challenges for language and library implementations.
+An alphabetically ordered list of the languages used in the examples. The
+section name must match the folder name used for that language.
 
+### `eff`
 
-### Benchmarks
+The [Eff](http://www.eff-lang.org/) programming language can be installed [through
+OPAM](https://github.com/matijapretnar/eff/#installing-with-opam) or
+downloaded from the [Eff GitHub
+repository](https://github.com/matijapretnar/eff/).
 
-Examples which test the performance of algebraic effects and handlers. These can
-serve as benchmarks for language and library implementations.
+To run Eff code contained in a file `example.eff`, run
+
+    eff example.eff
+
+from the command line.

@@ -1,0 +1,41 @@
+(* Declaration of the operations for state *)
+effect Get: int
+effect Set: int -> unit
+
+(* The standard state handler. Note that here we define a function
+   which takes the initial state as an argument and returns the
+   handler.
+ *)
+let state initial = handler
+  | y -> (fun _ -> y)
+  | effect Get k -> (fun s -> (continue k s) s)
+  | effect (Set s) k -> (fun _ -> (continue k ()) s)
+  | finally f -> f initial
+;;
+
+(* Example 1: compute the answer *)
+let example1 =
+
+  with state 10 handle
+    let x = perform Get in
+    perform (Set (4 + x)) ;
+    3 * perform Get
+;;
+
+(* Example 2: add numbers from 1 to 100 *)
+let example2 =
+
+  (* add k to the state *)
+  let add_to k = perform (Set (k + perform Get)) in
+
+  (* add numbers k, k-1, ..., 2, 1 to the state *)
+  let rec loop = function
+    | 0 -> ()
+    | k -> add_to k ; loop (k - 1)
+  in
+
+  (* run the loop and read the final state *)
+  with state 0 handle
+    loop 100 ;
+    perform Get
+;;
