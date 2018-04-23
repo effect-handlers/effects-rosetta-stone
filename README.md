@@ -1,4 +1,4 @@
-# Effects and handlers rosetta stone
+# Effects and handlers Rosetta stone
 
 A collection of examples demonstrating programming with effects and handlers in
 various programming languages.
@@ -8,17 +8,17 @@ various programming languages.
 ### General guidelines
 
 1. Each example should be self-contained.
-2. Each example snould demonstate one aspect of effectful programming.
+2. Each example should demonstrate one aspect of effectful programming.
 3. All folder names are in lower case, with words separated by dashes, e.g.,
    `cooperative-threads`, `multicore-ocaml`, `algol-68`.
 
 ### Repository structure
 
 The repository contains one folder `example-x` for each example, which is
-oganized as follows:
+organized as follows:
 
-* `exampleX/README.md` contains a general description of the example
-* `exampleX/language-y` contains the example implemented in `language-y`, where
+* `example-x/README.md` contains a general description of the example
+* `example-x/language-y` contains the example implemented in `language-y`, where
    an optional `example-x/language-y/README.md` contains further remarks about
    the language implementation of the example, if any.
 
@@ -47,18 +47,18 @@ To add a completely new example, follow these steps:
 
 To contribute an implementation of `example-x` in `language-y`, create the
 folder `example-x/language-y` and put the examples in it. If you have
-langauge-specific comments about the example, put them in
+language-specific comments about the example, put them in
 `example-x/language-y/README.md`.
 
 You may show several variants of the example. We recommend that you put them in
-separate files and commment on them on the `README.md` file.
+separate files and comment on them on the `README.md` file.
 
 
 ### May I improve other people's code?
 
 Yes, we strongly encourage sharing and cooperation.
 
-## Langauges
+## Languages
 
 An alphabetically ordered list of the languages used in the examples. The
 section name must match the folder name used for that language.
