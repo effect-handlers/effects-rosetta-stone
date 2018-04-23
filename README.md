@@ -65,10 +65,10 @@ section name must match the folder name used for that language.
 
 ### `eff`
 
-The [Eff](http://www.eff-lang.org/) programming language can be installed [through
-OPAM](https://github.com/matijapretnar/eff/#installing-with-opam) or
-downloaded from the [Eff GitHub
-repository](https://github.com/matijapretnar/eff/).
+The [Eff](http://www.eff-lang.org/) programming language can be installed
+[through OPAM](https://github.com/matijapretnar/eff/#installing-with-opam),
+compiled from [source code](https://github.com/matijapretnar/eff/), or [run in a
+browser](http://www.eff-lang.org/try/).
 
 To run Eff code contained in a file `example.eff`, run
 
