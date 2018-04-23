@@ -1,11 +1,7 @@
 # Effects and handlers rosetta stone
 
-## About the repository
-
-The participants of Dagstuhl seminar [Algebraic effect handlers go
-mainstream](https://www.dagstuhl.de/en/program/calendar/semhp/?semnr=18172)
-(April 22–27, 2018) have initiated this repository of examples that show how to
-program with algebraic effects and handlers in various languages.
+A collection of examples demonstrating programming with effects and handlers in
+various programming languages.
 
 ## How to contribute
 
@@ -79,3 +75,10 @@ To run Eff code contained in a file `example.eff`, run
     eff example.eff
 
 from the command line.
+
+## About the repository
+
+The participants of Dagstuhl seminar [Algebraic effect handlers go
+mainstream](https://www.dagstuhl.de/en/program/calendar/semhp/?semnr=18172) have
+initiated this repository of examples that show how to program with algebraic
+effects and handlers in various languages.
