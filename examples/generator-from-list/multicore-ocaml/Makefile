@@ -1,4 +1,4 @@
-OCAML ?= ocaml
+MULTICOREOCAML ?= ocaml
 
 all:
-	$(OCAML) main.ml
+	$(MULTICOREOCAML) main.ml
