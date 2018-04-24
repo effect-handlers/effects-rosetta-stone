@@ -1,4 +1,4 @@
-# Generator from iterator 
+# Generator from iterator
 
 The goal of this example is to make a generator from an iterator for a list.
 
@@ -12,10 +12,10 @@ from the container.
 ## Specifics
 
 * Implement a function `make_generator : List a -> (1 -> Option a)` which uses
-  the iterator over the list to make the generator. 
-* Initialise two lists 
-  
-      l1 = [1,2,3,4]  
+  the iterator over the list to make the generator.
+* Initialise two lists
+
+      l1 = [1,2,3,4]
       l2 = [a,b,c,d]
 
 * Instantiate generators `g1` and `g2` for the lists `l1` and `l2`.
@@ -23,4 +23,3 @@ from the container.
 * The result of the program should be:
 
       1a2b3c4d
-
