@@ -1,0 +1,2 @@
+all:
+	ocaml main.ml
