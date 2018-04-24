@@ -1,0 +1,9 @@
+(* A cow is an operation which return a function of type [unit -> unit] *)
+effect Cow : (unit -> unit)
+
+(* How many times does a cow moo? *)
+let cow =
+  handle
+    (perform Cow) ()
+  with
+  | effect Cow k -> print_string "moo " ; k (fun () -> (perform Cow) ())
