@@ -14,13 +14,17 @@ various programming languages.
 
 ### Repository structure
 
-The repository contains one folder `example-x` for each example, which is
-organized as follows:
+The repository contains one folder `examples/example-x` per example, which contains:
 
-* `example-x/README.md` contains a general description of the example
-* `example-x/language-y` contains the example implemented in `language-y`, where
-   an optional `example-x/language-y/README.md` contains further remarks about
-   the language implementation of the example, if any.
+* `README.md` contains a general description of the example
+* `language-y` contains the example implemented in `language-y`, which further
+   contains:
+
+   * an optional `README.md` contains further comments on the language
+     implementation of the example,
+   * a `Makefile` whose target `all` runs all the source code
+   * self-contained source code, following the established standards for the
+     programming language
 
 ### How to contribute a new programming language
 
@@ -31,36 +35,40 @@ To add a new programming language *My Language*, follow these steps:
 2. Describe the language in the section *Languages* below. Use `my-language` as
    the section name. Please provide links to the language home page and
    installation instructions.
-3. Implement at least one example in your language.
+3. Implement at least one [example
+   instance](#how-to-contribute-an-example-instance) in your language.
 
 ### How to contribute a new example
 
 To add a completely new example, follow these steps:
 
-1. Create a lower-case folder `example-x` that will contain the example.
-2. Create `example-x/README.md` and write a general description of the problem.
-   Please follow the format of existing example descriptions.
-3. Implement at least one example so that it is clear what needs to be
-   implemented.
+1. Pick a lower case folder name for the example, e.g., `example-x`.
+2. Create a lower-case folder `examples/example-x` that will contain the example
+   and put in it `README.md` with a general description of the example. Please
+   follow the format of existing example descriptions.
+3. Implement at least one [example
+   instance](#how-to-contribute-an-example-instance) so that it is clear what
+   needs to be implemented.
 
-### How to contribute a new example instance
+### How to contribute an example instance
 
-To contribute an implementation of `example-x` in `language-y`, create the
-folder `example-x/language-y` and put the examples in it. If you have
-language-specific comments about the example, put them in
-`example-x/language-y/README.md`.
+To implement an example instance of `example-x` in `language-y`, create
+`examples/example-x/language-y` and populate it, following the [repository
+structure](#repository-structure) guidelines.
 
 You may show several variants of the example. We recommend that you put them in
 separate files, comment on them on the `README.md` file, and clearly mark one of
 the examples as the *main* one. The main example is the one that people should
 look at first.
 
-### What if an example cannot be done in my language?
+### How to contribute an example non-instance
 
-We want to know about it! You should still include your language under the
-example, but without source code, or maybe with a partial solution. In the
-`README.md` you can explain what prevents the language from implementing the
-example.
+If something cannot be naturally implemented in your language, we want to know
+about it! Create the folder `examples/example-x/language-y` and put in it
+`README.md` which explains what the problem is.
+
+You may add a *partial*, *simplified*, or *modified* implementation, in which
+case you should explicitly describe the changes you made in `README.md`.
 
 ### May I improve other people's code?
 
@@ -78,15 +86,19 @@ The [Eff](http://www.eff-lang.org/) programming language can be installed
 compiled from [source code](https://github.com/matijapretnar/eff/), or [run in a
 browser](http://www.eff-lang.org/try/).
 
-To run Eff code contained in a file `example.eff`, run
+To run Eff code contained in a file `example.eff`, run from the command line:
 
-    eff example.eff
+```bash
+eff example.eff
+```
 
-from the command line.
+You can also run `make` in the example directory and it will run all examples for you.
+
 
 ### `multicore-ocaml`
 
-[Multicore OCaml](https://github.com/ocamllabs/ocaml-multicore) can be installed through opam:
+[Multicore OCaml](https://github.com/ocamllabs/ocaml-multicore) can be installed
+through [OPAM](https://opam.ocaml.org):
 
 ```bash
 $ opam remote add multicore https://github.com/ocamllabs/multicore-opam.git
