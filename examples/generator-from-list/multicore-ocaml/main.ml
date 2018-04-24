@@ -21,10 +21,7 @@ let example =
   let g2 = make_generator l2 in
   let rec loop () =
     match g1(), g2() with
-    | Some v1, Some v2 ->
-        print_int v1;
-        print_string v2;
-        loop ()
-    | _ -> print_endline ""
+    | Some v1, Some v2 -> (v1, v2) :: loop ()
+    | _ -> ()
   in
   loop ()
