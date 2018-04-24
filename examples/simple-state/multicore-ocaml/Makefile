@@ -1,2 +1,4 @@
+OCAML ?= ocaml
+
 all:
-	ocaml main.ml
+	$(OCAML) main.ml
