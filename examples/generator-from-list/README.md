@@ -7,8 +7,11 @@ Specifically, a **generator** for a list `[x₁, …, xᵢ]` is a map `1 → Opt
 which returns the elements `x₁`, …, `xᵢ` in turn on successive calls (and
 nothing after that).
 
-We implement a function `make_generator : List a → (1 → Option a)`, *polymorphic
-  in `a`*, which uses the iterator over the list to make the generator.
+We implement a function `make_generator : List a → (1 → Option a)` which uses
+the iterator over the list to make the generator.
+
+An important point about this example is that `make_generator` is polymorphic,
+and therefore it has to dynamically create effects at different types.
 
 To test the function, we create two generators
 
