@@ -2,7 +2,7 @@
 let list_iter lst f =
   let rec iter = function
     | [] -> ()
-    | x :: xs -> f x ; iter xs f
+    | x :: xs -> f x ; iter xs
   in
   iter lst
 
@@ -14,7 +14,7 @@ let leaf x = Node (x, Empty, Empty)
 let tree_iter tree f =
   let rec iter = function
     | Empty -> ()
-    | Node (x, l, r) -> tree_iter f l ; f x ; iter f r
+    | Node (x, l, r) -> iter l ; f x ; iter r
   in
   iter tree
 
@@ -37,7 +37,7 @@ let make_generator (type a) (iter : (a -> unit) -> unit) : (unit -> a option) =
 (* Example *)
 let example =
 
-   let it1 = list_iter [10, 20, 30, 40, 50] in
+   let it1 = list_iter [10; 20; 30; 40; 50] in
    let it2 = tree_iter (Node (5, Node (3, leaf 1, leaf 4), leaf 6)) in
    let g1 = make_generator it1 in
    let g2 = make_generator it2 in
