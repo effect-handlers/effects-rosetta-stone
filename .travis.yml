@@ -1,0 +1,5 @@
+language: c
+sudo: required
+script: bash -ex .travis.sh
+os:
+  - linux
