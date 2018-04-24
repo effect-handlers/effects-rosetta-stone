@@ -106,6 +106,10 @@ $ opam remote add multicore https://github.com/ocamllabs/multicore-opam.git
 $ opam switch 4.06.1+multicore
 ```
 
+### `Frank`
+
+Frank can be found [here](https://github.com/frank-lang/frank).
+
 ## About the repository
 
 The participants of Dagstuhl seminar [Algebraic effect handlers go
