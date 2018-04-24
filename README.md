@@ -53,6 +53,12 @@ language-specific comments about the example, put them in
 You may show several variants of the example. We recommend that you put them in
 separate files and comment on them on the `README.md` file.
 
+### What if an example cannot be done in my language?
+
+We want to know about it! You should still include your language under the
+example, but without source code, or maybe with a partial solution. In the
+`README.md` you can explain what prevents the language from implementing the
+example.
 
 ### May I improve other people's code?
 
