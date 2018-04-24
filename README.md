@@ -84,6 +84,15 @@ To run Eff code contained in a file `example.eff`, run
 
 from the command line.
 
+### `multicore-ocaml`
+
+[Multicore OCaml](https://github.com/ocamllabs/ocaml-multicore) can be installed through opam:
+
+```bash
+$ opam remote add multicore https://github.com/ocamllabs/multicore-opam.git
+$ opam switch 4.06.1+multicore
+```
+
 ## About the repository
 
 The participants of Dagstuhl seminar [Algebraic effect handlers go
