@@ -14,10 +14,11 @@ various programming languages.
 
 ### Repository structure
 
-The repository contains one folder `examples/example-x` per example, which contains:
+The repository contains examples in the `examples` folder, with a subfolder
+`examples/example-x` for each *Example X*, and further containing:
 
 * `README.md` contains a general description of the example
-* `language-y` contains the example implemented in `language-y`, which further
+* `language-y` contains the example implemented in *Example Y*, which further
    contains:
 
    * an optional `README.md` contains further comments on the language
