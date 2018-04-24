@@ -1,0 +1,24 @@
+{-- Declaration of the operations for state --}
+interface State S = get : S | set : S -> Unit
+
+{-- The standard state handler --}
+state : {S -> <State S>X -> X}
+state _ x            = x
+state s <get -> k>   = state s (k s)
+state _ <set s -> k> = state s (k unit)
+
+{-- Example 1: compute the answer --}
+example1 : {Int}
+example1! = state 10 (let x = get! in set (4 + x); get! + get! + get!)
+
+{-- Example 2: add numbers from 1 to 100 --}
+example2 : {Int}
+example2! = state 0 (loop 100; get!)
+
+{-- Frank doesn't yet support local definitions --}
+add_to : {Int -> [State Int]Unit}
+add_to k = set (k + get!)
+
+loop : {Int -> [State Int]Unit}
+loop 0 = unit
+loop k = add_to k; loop (k - 1)
