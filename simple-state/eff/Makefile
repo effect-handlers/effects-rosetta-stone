@@ -1,4 +1,4 @@
 EFF ?= eff
 
 all:
-	$(EFF) ./state.eff
+	$(EFF) state.eff
