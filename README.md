@@ -84,6 +84,10 @@ To run Eff code contained in a file `example.eff`, run
 
 from the command line.
 
+### `Frank`
+
+Frank can be found [here](https://github.com/frank-lang/frank).
+
 ## About the repository
 
 The participants of Dagstuhl seminar [Algebraic effect handlers go
