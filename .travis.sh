@@ -9,4 +9,5 @@ opam install -y ocamlfind ocamlbuild
 #Eff
 opam switch 4.02.3
 eval $(opam config env)
+opam pin add -k git eff git@github.com:matijapretnar/eff.git
 opam install -y eff
