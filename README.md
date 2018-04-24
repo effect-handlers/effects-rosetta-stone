@@ -51,7 +51,9 @@ language-specific comments about the example, put them in
 `example-x/language-y/README.md`.
 
 You may show several variants of the example. We recommend that you put them in
-separate files and comment on them on the `README.md` file.
+separate files, comment on them on the `README.md` file, and clearly mark one of
+the examples as the *main* one. The main example is the one that people should
+look at first.
 
 ### What if an example cannot be done in my language?
 
