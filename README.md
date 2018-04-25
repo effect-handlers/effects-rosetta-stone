@@ -11,6 +11,10 @@ various programming languages.
 2. Each example should demonstrate one aspect of effectful programming.
 3. All folder names are in lower case, with words separated by dashes, e.g.,
    `cooperative-threads`, `multicore-ocaml`, `algol-68`.
+4. Do *not* print things out in examples that do not call for printing. Instead,
+   just compute whatever needs to be computed and store the results in top-level
+   values. Many languages will show the values anyhow, and that is as good as
+   printing.
 
 ### Repository structure
 
