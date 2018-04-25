@@ -1,0 +1,30 @@
+effect Choose : bool
+
+(* We handle the following computation in several ways. *)
+let f () =
+  let x = if (perform Choose) then 10 else 15 in
+  let y = if (perform Choose) then 5 else 10 in
+  x - y
+
+(* Always pick [false] *)
+let example1 =
+  handle
+    f ()
+  with
+  | effect Choose k -> k false
+
+(* Colllect all choices into a list (@ is list concatenation) *)
+let example2 =
+  handle
+    f ()
+  with
+  | x -> [x]
+  | effect Choose k -> (k false) @ (k true)
+
+(* Pick the choice which maximizes the result. *)
+let example3 =
+  handle
+    f ()
+  with
+  | x -> x
+  | effect Choose k -> max (k false) (k true)
