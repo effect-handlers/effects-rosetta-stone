@@ -1,4 +1,4 @@
 LINKS ?= linx --enable-handlers
 
 all:
-	$(LINKS) state.links
+	$(LINKS) fringe.links
