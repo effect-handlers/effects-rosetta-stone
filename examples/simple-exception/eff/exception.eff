@@ -1,0 +1,29 @@
+effect Abort : empty
+
+(* A function which calls itself [n] times and raises [Abort] *)
+let rec deep = function
+  | 0 -> perform Abort
+  | n -> deep (n - 1)
+
+(* Raise an exception from within nested recursive calls. *)
+let example1 =
+   handle
+     (* does it work even if we change 42 to something big? *)
+     deep 42 ;
+     (* we should never get here! *)
+     13
+   with
+   | effect Abort _ -> 42
+
+(* Raise an exception, catch it, and re-raise it. *)
+let example2 =
+  handle
+    handle
+      let x = 2 in
+      perform Abort ;
+      let y = 3 in
+      x + y
+    with
+    | effect Abort _ -> perform Abort ; 13
+  with
+  | effect Abort _ -> 42
