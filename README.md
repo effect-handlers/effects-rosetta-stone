@@ -112,6 +112,41 @@ eff example.eff
 You can also run `make` in the example directory and it will run all examples for you.
 
 
+### `links`
+
+The latest version of the [Links](http://www.links-lang.org)
+programming language can be compiled from
+[source](https://github.com/links-lang/links). Alternatively, the
+latest version of Links can be installed through OPAM:
+
+```bash
+$ opam install links
+```
+
+*N.B.* The Links binary is installed as `linx`.
+
+To run a Links program `example.links`, run
+
+     linx example.links
+
+#### Enabling handlers
+
+At the time of writing effect handlers in Links are a toggable
+experimental language extension. Handlers can be enabled by passing
+the `--enable-handlers` flag at launch time on the command line, i.e.
+
+```bash
+$ linx --enable-handlers
+```
+
+Alternatively, they can be enabled via a config file (along with other
+options and extensions):
+
+```
+$ echo "enable_handlers=true" >> handlers.config
+$ linx --config=handlers.config
+```
+
 ### `multicore-ocaml`
 
 [Multicore OCaml](https://github.com/ocamllabs/ocaml-multicore) can be installed
