@@ -22,6 +22,9 @@ let example =
   let rec loop () =
     match g1(), g2() with
     | Some v1, Some v2 -> (v1, v2) :: loop ()
-    | _ -> ()
+    | _ -> []
   in
   loop ()
+;;
+
+assert ([(1,"a"); (2,"b"); (3,"c"); (4,"d")] = example)
