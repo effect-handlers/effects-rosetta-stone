@@ -1,0 +1,38 @@
+# State using a *parameterised* handler. The parameter `st' is
+# threaded through evaluation of the computation `m'.
+
+sig state : (s, Comp({Get:s, Set:(s) -> () |e}, a)) {Get{_}, Set{_} |e}~> a
+fun state(s, m) {
+  handle(m())(s -> st) {
+    case Return(y) -> y
+    case Get(resume) -> resume(st, st)
+    case Set(p, resume) -> resume((), p)
+  }
+}
+
+# Example 1: compute the answer
+var example1 = {
+   state(10, fun() {
+      var x = do Get;
+      do Set(4 + x);
+      3 * do Get
+   })
+};
+var result1 = print(intToString(example1));
+
+# Example 2: add numbers from 1 to 100
+var example2 = {
+
+  # add k to the state
+  fun add_to(k) { do Set (k + do Get) }
+
+  # add numbers k, k-1, ..., 2, 1 to the state
+  fun loop(k) {
+    if (k == 0) ()
+    else { add_to(k); loop(k - 1) }
+  }
+
+  # run the loop and read the final state
+  state(0, fun() { loop(100); do Get })
+};
+var result2 = print(intToString(example2));
