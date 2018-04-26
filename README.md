@@ -138,3 +138,6 @@ The participants of Dagstuhl seminar [Algebraic effect handlers go
 mainstream](https://www.dagstuhl.de/en/program/calendar/semhp/?semnr=18172) have
 initiated this repository of examples that show how to program with algebraic
 effects and handlers in various languages.
+
+![Dagstuhl participants](https://www.dagstuhl.de/Gruppenbilder/18172.05.l.jpg)
+
