@@ -111,6 +111,14 @@ eff example.eff
 
 You can also run `make` in the example directory and it will run all examples for you.
 
+### `frank`
+
+Install Frank from the [Frank GitHub repository](https://github.com/frank-lang/frank). To run
+a Frank program contained in a file `example.fk`, run from the command line:
+
+```bash
+frank example.fk
+```
 
 ### `multicore-ocaml`
 
@@ -120,15 +128,6 @@ through [OPAM](https://opam.ocaml.org):
 ```bash
 $ opam remote add multicore https://github.com/ocamllabs/multicore-opam.git
 $ opam switch 4.06.1+multicore
-```
-
-### `frank`
-
-Install Frank from the [Frank GitHub repository](https://github.com/frank-lang/frank). To run
-a Frank program contained in a file `example.fk`, run from the command line:
-
-```bash
-frank example.fk
 ```
 
 ## About the repository
