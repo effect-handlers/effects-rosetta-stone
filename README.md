@@ -3,13 +3,31 @@
 A collection of examples demonstrating programming with effects and handlers in
 various programming languages.
 
+[![Build Status](https://travis-ci.org/andrejbauer/effects-rosetta-stone.svg?branch=master)](https://travis-ci.org/andrejbauer/effects-rosetta-stone)
+
 ## How to contribute
 
 ### General guidelines
 
-1. Each example should be self-contained.
-2. Each example should demonstrate one aspect of effectful programming.
-3. All folder names are in lower case, with words separated by dashes, e.g.,
+1. Each example instance should be self-contained.
+
+2. Each example should demonstrate *one* aspect of effectful programming.
+   This does not mean it has to be simple.
+
+3. In the naming of making comparisons possible, different implementations of a
+   single example should do *the same thing* as far as that is possible. For
+   instance, if there are *two* ways to implement an effect, e.g., state using
+   the usual monad and state using parametrized effects, then there should be
+   *two* examples which are identical, except for the implementation. If you
+   feel that the implementation is unnatural, please comment on this, but still
+   do it.
+
+4. Do *not* print things out in examples that do not call for printing. Instead,
+   just compute whatever needs to be computed and store the results in top-level
+   values. Many languages will show the values anyhow, and that is as good as
+   printing.
+
+5. All folder names are in lower case, with words separated by dashes, e.g.,
    `cooperative-threads`, `multicore-ocaml`, `algol-68`.
 
 ### Repository structure
@@ -95,6 +113,14 @@ eff example.eff
 
 You can also run `make` in the example directory and it will run all examples for you.
 
+### `frank`
+
+Install Frank from the [Frank GitHub repository](https://github.com/frank-lang/frank). To run
+a Frank program contained in a file `example.fk`, run from the command line:
+
+```bash
+frank example.fk
+```
 
 ### `multicore-ocaml`
 
@@ -104,15 +130,6 @@ through [OPAM](https://opam.ocaml.org):
 ```bash
 $ opam remote add multicore https://github.com/ocamllabs/multicore-opam.git
 $ opam switch 4.06.1+multicore
-```
-
-### `frank`
-
-Install Frank from the [Frank GitHub repository](https://github.com/frank-lang/frank). To run
-a Frank program contained in a file `example.fk`, run from the command line:
-
-```bash
-frank example.fk
 ```
 
 ## About the repository
