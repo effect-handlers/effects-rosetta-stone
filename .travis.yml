@@ -3,3 +3,6 @@ sudo: required
 script: bash -ex .travis.sh
 os:
   - linux
+env:
+  - KIND=ocaml
+  - KIND=haskell
