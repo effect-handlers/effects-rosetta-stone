@@ -1,0 +1,23 @@
+{-- standard stuff --}
+map : {{X -> Y} -> List X -> List Y}
+map f []        = []
+map f (x :: xs) = f x :: map f xs
+
+print : {String -> [Console]Unit}
+print s = map ouch s; unit
+{--------------------}
+
+{-- Frank's bidirectional effect type system requires that the recursion
+inherent in the recursive cow be made explicit --}
+interface Cow = moo : {[Cow]Unit}
+
+{-- How many times does a cow moo? --}
+cow : {[Cow]Unit}
+cow! = (moo!)!
+
+eat : {<Cow [Console]>Unit -> [Console]Unit}
+eat <moo -> k> = print "moo "; eat (k cow)
+eat unit       = unit
+
+main : {[Console]Unit}
+main! = eat cow!
