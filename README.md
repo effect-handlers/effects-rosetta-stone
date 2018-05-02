@@ -132,6 +132,18 @@ $ opam remote add multicore https://github.com/ocamllabs/multicore-opam.git
 $ opam switch 4.06.1+multicore
 ```
 
+### `scala-effekt`
+
+[Scala Effekt](http://b-studios.de/scala-effekt) is a library
+implementation of algebraic effects in Scala / Dotty (the future Scala
+3.0). Since `effekt` is a library, you only need [`sbt`](https://www
+.scala-sbt.org/) to run the examples. In the corresponding example
+folder then simply execute:
+
+```bash
+sbt run
+```
+
 ## About the repository
 
 The participants of Dagstuhl seminar [Algebraic effect handlers go
