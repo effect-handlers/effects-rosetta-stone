@@ -1,8 +1,48 @@
-language: c
-sudo: required
-script: bash -ex .travis.sh
-os:
-  - linux
-env:
-  - KIND=ocaml
-  - KIND=haskell
+matrix:
+  include:
+
+    # Multicore OCaml
+    - language: c
+      sudo: required
+      script: bash -ex .travis.sh
+      os:
+        - linux
+      env:
+        - PROGLANG=multicore-ocaml
+        - KIND=ocaml
+
+    # Eff
+    - language: c
+      sudo: required
+      script: bash -ex .travis.sh
+      os:
+        - linux
+      env:
+        - PROGLANG=eff
+        - KIND=ocaml
+
+    # Frank
+    - language: c
+      sudo: required
+      script: bash -ex .travis.sh
+      os:
+        - linux
+      env:
+        - PROGLANG=frank
+        - KIND=haskell
+
+    # Scala Effekt
+    - language: scala
+      addons:
+        apt:
+          packages:
+            - oracle-java8-installer
+      jvm:
+        - oraclejdk8
+      script: make all
+      cache:
+        directories:
+          - $HOME/.ivy2/cache
+          - $HOME/.sbt
+      env:
+        - PROGLANG=scala-effekt
