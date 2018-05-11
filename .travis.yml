@@ -8,7 +8,7 @@ matrix:
       os:
         - linux
       env:
-        - LANG=multicore-ocaml
+        - PROGLANG=multicore-ocaml
         - KIND=ocaml
 
     # Eff
@@ -18,7 +18,7 @@ matrix:
       os:
         - linux
       env:
-        - LANG=eff
+        - PROGLANG=eff
         - KIND=ocaml
 
     # Frank
@@ -28,7 +28,7 @@ matrix:
       os:
         - linux
       env:
-        - LANG=frank
+        - PROGLANG=frank
         - KIND=haskell
 
     # Scala Effekt
@@ -39,9 +39,10 @@ matrix:
             - oracle-java8-installer
       jvm:
         - oraclejdk8
+      script: make all
       cache:
         directories:
           - $HOME/.ivy2/cache
           - $HOME/.sbt
       env:
-        - LANG=scala-effekt
+        - PROGLANG=scala-effekt

@@ -1,7 +1,8 @@
 TOPTARGETS := all clean
 
-SUBDIRS := $(wildcard */*/.)
+PROGLANG ?= *
 
+SUBDIRS := $(wildcard examples/*/$(PROGLANG)/.)
 $(TOPTARGETS): $(SUBDIRS)
 $(SUBDIRS):
 	$(MAKE) -C $@ $(MAKECMDGOALS)
