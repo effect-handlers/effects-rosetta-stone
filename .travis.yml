@@ -33,8 +33,12 @@ matrix:
 
     # Scala Effekt
     - language: scala
-      script:
-        - jdk_switcher use oraclejdk8
+      addons:
+        apt:
+          packages:
+            - oracle-java8-installer
+      jvm:
+        - oraclejdk8
       cache:
         directories:
           - $HOME/.ivy2/cache
