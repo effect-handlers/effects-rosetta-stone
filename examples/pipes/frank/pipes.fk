@@ -1,0 +1,62 @@
+{--- Pipes: multihandlers ---}
+
+{-- begin standard stuff --}
+append : {List X -> List X -> List X}
+append []        ys = ys
+append (x :: xs) ys = x :: (append xs ys)
+
+map : {{X -> Y} -> List X -> List Y}
+map f []        = []
+map f (x :: xs) = f x :: map f xs
+{-- end standard stuff --}
+
+
+interface Abort = abort X : X
+interface Send X = send : X -> Unit
+interface Receive X = receive : X
+
+-- send a list of values
+sends : {List X -> [Send X]Unit}
+sends xs = map send xs; unit
+
+-- receive and concatenate a nil-terminated list of lists
+catter : {[Receive (List X)]List X}
+catter! = case receive! { []  -> []
+                        | xs  -> append xs catter!}
+
+-- pipe as a multihandler
+pipe : {<Send X>Unit -> <Receive X>Y -> [Abort]Y}
+pipe <send x -> s> <receive -> r> = pipe (s unit) (r x)
+pipe <_>           y              = y
+pipe unit          <receive -> r> = abort!
+
+-- a simple pipe
+example1 : {[Abort]String}
+example1! = pipe (sends ["do", "be", "do", "be", "do", ""]) catter!
+
+spacer : [Send String, Receive String]Unit
+spacer! = send receive!; send " "; spacer!
+
+-- pipes compose
+example2 : {[Abort]String}
+example2! = pipe (sends ["do", "be", "do", "be", "do", ""]) (pipe spacer! catter!)
+
+
+{--
+
+Remarks:
+
+  * Abort is a polymorphic command.
+
+  * Multihandlers support a particularly concise implementation of
+pipes.
+
+  * The <_> pattern matches all commands and all values specified by
+the type of the corresponding port. In the case of the pipe
+multihandler it matches the send command and any value. It is never
+possible to match a command that is not mentioned in the type of the
+corresponding port.
+
+  * The pattern y matches only values.
+
+--}
