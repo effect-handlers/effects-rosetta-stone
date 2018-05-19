@@ -1,7 +1,7 @@
 # Pipes
 
 Standard deep handlers hardwire a particular structural recursion
-scheme over a computation tree - namely a /fold/ or /catamorphism/.
+scheme over a computation tree - namely a *fold* or *catamorphism*.
 
 Shallow handlers, in contrast, perform a case split on the computation
 tree, so the programmer has to make explicit recursive calls. This
