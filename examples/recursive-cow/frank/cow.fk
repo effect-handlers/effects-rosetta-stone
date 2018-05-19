@@ -1,11 +1,11 @@
-{-- standard stuff --}
+{-- begin standard stuff --}
 map : {{X -> Y} -> List X -> List Y}
 map f []        = []
 map f (x :: xs) = f x :: map f xs
 
 print : {String -> [Console]Unit}
 print s = map ouch s; unit
-{--------------------}
+{-- end standard stuff --}
 
 {-- Frank's bidirectional effect type system requires that the recursion
 inherent in the recursive cow be made explicit --}
@@ -21,3 +21,23 @@ eat unit       = unit
 
 main : {[Console]Unit}
 main! = eat cow!
+
+
+{--
+
+Remarks:
+
+ * The Cow interface has an implicit effect parameter by virtue of the
+thunk in the moo command being implicitly effect-polymorphic. The
+implicit effect parameter (if any) is always the last one for
+interfaces and data types.
+
+If we wanted to be completely explicit then we'd write:
+
+  interface Cow [E] = moo : {[E | Cow [E |] ]Unit}
+
+ * In the eat handler we must instantiate the implicit effect with an
+ability that includes the Console interface in order to be able to
+print. As ever in Frank, this ability is itself effect-polymorphic.
+
+--}
