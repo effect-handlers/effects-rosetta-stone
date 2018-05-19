@@ -3,7 +3,7 @@
 A collection of examples demonstrating programming with effects and handlers in
 various programming languages.
 
-[![Build Status](https://travis-ci.org/andrejbauer/effects-rosetta-stone.svg?branch=master)](https://travis-ci.org/andrejbauer/effects-rosetta-stone)
+[![Build Status](https://travis-ci.org/effect-handlers/effects-rosetta-stone.svg?branch=master)](https://travis-ci.org/effect-handlers/effects-rosetta-stone)
 
 ## How to contribute
 
