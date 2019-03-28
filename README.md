@@ -124,6 +124,7 @@ frank example.fk
 
 
 ### `koka`
+<img align="right" width="75px" height="75px" src="https://github.com/koka-lang/koka/raw/master/doc/koka-logo-200.png">
 
 [Koka](https://github.com/koka-lang/koka) (meaning "effective" in Japanese) can be installed from the [Koka Github repository](https://github.com/koka-lang/koka). It is best to clone the repository next to the
 rosetta repository as the make files assume the Koka binary is located there, e.g.
